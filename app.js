@@ -1,6 +1,32 @@
-const _ = require("lodash");
+const { readFile, writeFile } = require("fs");
+// const fs = require("fs");
+// const readFile = fs.readFile;
+// const writeFile = fs.writeFile;
 
-const items = [1, [2, [3, [4]]]];
-const newItems = _.flattenDeep(items);
-console.log(newItems);
-console.log("hello people");
+console.log("start");
+readFile("./content/first.txt", "utf8", (err, result) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  const first = result;
+  readFile("./content/second.txt", "utf8", (err, result) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    const second = result;
+    writeFile(
+      "./content/result-async.txt",
+      `Here is the result : ${first}, ${second}`,
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log("done with this task");
+      }
+    );
+  });
+});
+console.log("starting next task");
