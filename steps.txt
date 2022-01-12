@@ -1,0 +1,23 @@
+--NPM SETUP--
+=> npm init -y:This creates a package.json file
+=> To install any dependencies locally: npm i <package name>, this creates a package-lock.json file containing details of all local dependencies and a node_modules folder containing the dependencies
+=> Create a .gitignore file and place files and folders to ignore like /node_modules
+=> To install any dependencies globally: npm install -g <package name>
+
+--GIT SETUP--
+=> git init
+=> git add .
+=> git commit -m "first commit"
+=> Then open github create the repo and copy the details
+
+
+--Cloning The Repo--
+=> git clone <git address>
+=> if package.json exist then we need to install the dependencies in node_modules that were ignored in gitignore
+=> type npm install to install the dependencies and automatically setup the node_modules folder
+
+--Installing devDependencies--
+install testing and formatting packages in devDependencies
+=>npm i <package name eg nodemon> -D or npm i <package name> --save-dev
+
+In the package.json scripts visit Node and Express tutorial by john smilga 2:12:30
